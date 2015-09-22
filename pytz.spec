@@ -4,7 +4,7 @@
 #
 Name     : pytz
 Version  : 2015.6
-Release  : 11
+Release  : 12
 URL      : https://pypi.python.org/packages/source/p/pytz/pytz-2015.6.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/pytz/pytz-2015.6.tar.gz
 Summary  : World timezone definitions, modern and historical
@@ -41,7 +41,7 @@ python3 setup.py build -b py3
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-py.test-2.7 || :
+py.test-2.7
 %install
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot}
