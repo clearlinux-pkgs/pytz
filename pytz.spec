@@ -4,7 +4,7 @@
 #
 Name     : pytz
 Version  : 2016.3
-Release  : 20
+Release  : 21
 URL      : https://pypi.python.org/packages/source/p/pytz/pytz-2016.3.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/pytz/pytz-2016.3.tar.gz
 Summary  : World timezone definitions, modern and historical
