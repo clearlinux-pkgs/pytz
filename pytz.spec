@@ -4,7 +4,7 @@
 #
 Name     : pytz
 Version  : 2016.7
-Release  : 25
+Release  : 26
 URL      : http://pypi.debian.net/pytz/pytz-2016.7.tar.gz
 Source0  : http://pypi.debian.net/pytz/pytz-2016.7.tar.gz
 Summary  : World timezone definitions, modern and historical
