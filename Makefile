@@ -1,5 +1,5 @@
 PKG_NAME := pytz
-URL := http://pypi.debian.net/pytz/pytz-2016.10.tar.gz
+URL := https://pypi.debian.net/pytz/pytz-2017.2.zip
 
 
 include ../common/Makefile.common
