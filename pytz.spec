@@ -6,7 +6,7 @@
 #
 Name     : pytz
 Version  : 2017.2
-Release  : 35
+Release  : 36
 URL      : https://pypi.debian.net/pytz/pytz-2017.2.zip
 Source0  : https://pypi.debian.net/pytz/pytz-2017.2.zip
 Source99 : https://pypi.debian.net/pytz/pytz-2017.2.zip.asc
