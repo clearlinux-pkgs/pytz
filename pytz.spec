@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pytz
-Version  : 2017.3
-Release  : 39
-URL      : https://pypi.debian.net/pytz/pytz-2017.3.zip
-Source0  : https://pypi.debian.net/pytz/pytz-2017.3.zip
-Source99 : https://pypi.debian.net/pytz/pytz-2017.3.zip.asc
+Version  : 2018.3
+Release  : 40
+URL      : https://pypi.debian.net/pytz/pytz-2018.3.tar.gz
+Source0  : https://pypi.debian.net/pytz/pytz-2018.3.tar.gz
+Source99 : https://pypi.debian.net/pytz/pytz-2018.3.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -37,7 +37,6 @@ legacypython components for the pytz package.
 %package python
 Summary: python components for the pytz package.
 Group: Default
-Requires: pytz-legacypython
 Requires: pytz-python3
 
 %description python
@@ -54,14 +53,14 @@ python3 components for the pytz package.
 
 
 %prep
-%setup -q -n pytz-2017.3
+%setup -q -n pytz-2018.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1510340677
+export SOURCE_DATE_EPOCH=1518210034
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -71,7 +70,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1510340677
+export SOURCE_DATE_EPOCH=1518210034
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
