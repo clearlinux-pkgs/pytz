@@ -6,14 +6,13 @@
 #
 Name     : pytz
 Version  : 2018.3
-Release  : 40
+Release  : 41
 URL      : https://pypi.debian.net/pytz/pytz-2018.3.tar.gz
 Source0  : https://pypi.debian.net/pytz/pytz-2018.3.tar.gz
 Source99 : https://pypi.debian.net/pytz/pytz-2018.3.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
-Requires: pytz-legacypython
 Requires: pytz-python3
 Requires: pytz-python
 BuildRequires : pbr
@@ -60,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1518210034
+export SOURCE_DATE_EPOCH=1519398792
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -70,7 +69,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1518210034
+export SOURCE_DATE_EPOCH=1519398792
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
