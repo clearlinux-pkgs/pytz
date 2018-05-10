@@ -6,7 +6,7 @@
 #
 Name     : pytz
 Version  : 2018.4
-Release  : 42
+Release  : 43
 URL      : https://pypi.debian.net/pytz/pytz-2018.4.tar.gz
 Source0  : https://pypi.debian.net/pytz/pytz-2018.4.tar.gz
 Source99 : https://pypi.debian.net/pytz/pytz-2018.4.tar.gz.asc
