@@ -1,12 +1,15 @@
 # This file contains recursive sources that require this package
 Babel
+Cheetah
 Cython
 FreeRDP
 Keras
 Keras_Applications
 Keras_Preprocessing
 Mako
+Markdown
 PyWavelets
+PyYAML
 R-fastcluster
 Sphinx
 Theano
@@ -86,6 +89,7 @@ libgudev
 libmediaart
 librsvg
 libsoup
+libstoragemgmt
 llvm
 matplotlib
 moka-icon-theme
@@ -105,6 +109,7 @@ pandas
 pango
 paramiko
 pyOpenSSL
+pyaml
 pyquery
 pyrfc3339
 pytest-cov

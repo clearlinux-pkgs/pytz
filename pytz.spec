@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pytz
-Version  : 2018.4
-Release  : 50
-URL      : https://pypi.debian.net/pytz/pytz-2018.4.tar.gz
-Source0  : https://pypi.debian.net/pytz/pytz-2018.4.tar.gz
-Source99 : https://pypi.debian.net/pytz/pytz-2018.4.tar.gz.asc
+Version  : 2018.5
+Release  : 51
+URL      : https://pypi.debian.net/pytz/pytz-2018.5.tar.gz
+Source0  : https://pypi.debian.net/pytz/pytz-2018.5.tar.gz
+Source99 : https://pypi.debian.net/pytz/pytz-2018.5.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -64,14 +64,14 @@ python3 components for the pytz package.
 
 
 %prep
-%setup -q -n pytz-2018.4
+%setup -q -n pytz-2018.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530376863
+export SOURCE_DATE_EPOCH=1530383419
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -81,7 +81,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1530376863
+export SOURCE_DATE_EPOCH=1530383419
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/pytz
 cp LICENSE.txt %{buildroot}/usr/share/doc/pytz/LICENSE.txt
