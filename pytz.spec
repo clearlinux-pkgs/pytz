@@ -5,25 +5,20 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pytz
-Version  : 2018.5
-Release  : 55
-URL      : https://pypi.debian.net/pytz/pytz-2018.5.tar.gz
-Source0  : https://pypi.debian.net/pytz/pytz-2018.5.tar.gz
-Source99 : https://pypi.debian.net/pytz/pytz-2018.5.tar.gz.asc
+Version  : 2018.6
+Release  : 56
+URL      : https://files.pythonhosted.org/packages/c7/df/68a3331691a604a8241335064cf20742338d66eb008da96d4c9f3e3d4c41/pytz-2018.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c7/df/68a3331691a604a8241335064cf20742338d66eb008da96d4c9f3e3d4c41/pytz-2018.6.tar.gz
+Source99 : https://files.pythonhosted.org/packages/c7/df/68a3331691a604a8241335064cf20742338d66eb008da96d4c9f3e3d4c41/pytz-2018.6.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
-Requires: pytz-python3
-Requires: pytz-license
-Requires: pytz-python
-BuildRequires : pbr
-BuildRequires : pip
-BuildRequires : python-core
+Requires: pytz-license = %{version}-%{release}
+Requires: pytz-python = %{version}-%{release}
+Requires: pytz-python3 = %{version}-%{release}
+BuildRequires : buildreq-distutils23
+BuildRequires : buildreq-distutils3
 BuildRequires : python-dev
-BuildRequires : python3-core
-BuildRequires : python3-dev
-BuildRequires : setuptools
-BuildRequires : setuptools-legacypython
 
 %description
 ============================================
@@ -48,7 +43,7 @@ license components for the pytz package.
 %package python
 Summary: python components for the pytz package.
 Group: Default
-Requires: pytz-python3
+Requires: pytz-python3 = %{version}-%{release}
 
 %description python
 python components for the pytz package.
@@ -64,14 +59,14 @@ python3 components for the pytz package.
 
 
 %prep
-%setup -q -n pytz-2018.5
+%setup -q -n pytz-2018.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530383419
+export SOURCE_DATE_EPOCH=1540464994
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -81,10 +76,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1530383419
+export SOURCE_DATE_EPOCH=1540464994
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/pytz
-cp LICENSE.txt %{buildroot}/usr/share/doc/pytz/LICENSE.txt
+mkdir -p %{buildroot}/usr/share/package-licenses/pytz
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/pytz/LICENSE.txt
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -99,8 +94,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/pytz/LICENSE.txt
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pytz/LICENSE.txt
 
 %files python
 %defattr(-,root,root,-)
