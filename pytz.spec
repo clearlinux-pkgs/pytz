@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pytz
-Version  : 2018.7
-Release  : 58
-URL      : https://files.pythonhosted.org/packages/cd/71/ae99fc3df1b1c5267d37ef2c51b7d79c44ba8a5e37b48e3ca93b4d74d98b/pytz-2018.7.tar.gz
-Source0  : https://files.pythonhosted.org/packages/cd/71/ae99fc3df1b1c5267d37ef2c51b7d79c44ba8a5e37b48e3ca93b4d74d98b/pytz-2018.7.tar.gz
-Source99 : https://files.pythonhosted.org/packages/cd/71/ae99fc3df1b1c5267d37ef2c51b7d79c44ba8a5e37b48e3ca93b4d74d98b/pytz-2018.7.tar.gz.asc
+Version  : 2018.9
+Release  : 59
+URL      : https://files.pythonhosted.org/packages/af/be/6c59e30e208a5f28da85751b93ec7b97e4612268bb054d0dff396e758a90/pytz-2018.9.tar.gz
+Source0  : https://files.pythonhosted.org/packages/af/be/6c59e30e208a5f28da85751b93ec7b97e4612268bb054d0dff396e758a90/pytz-2018.9.tar.gz
+Source99 : https://files.pythonhosted.org/packages/af/be/6c59e30e208a5f28da85751b93ec7b97e4612268bb054d0dff396e758a90/pytz-2018.9.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -21,6 +21,7 @@ BuildRequires : buildreq-distutils3
 BuildRequires : python-dev
 
 %description
+pytz - World Timezone Definitions for Python
 ============================================
 
 %package legacypython
@@ -59,14 +60,14 @@ python3 components for the pytz package.
 
 
 %prep
-%setup -q -n pytz-2018.7
+%setup -q -n pytz-2018.9
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540823600
+export SOURCE_DATE_EPOCH=1546873138
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -76,7 +77,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test-2.7 || :
 %install
-export SOURCE_DATE_EPOCH=1540823600
+export SOURCE_DATE_EPOCH=1546873138
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pytz
 cp LICENSE.txt %{buildroot}/usr/share/package-licenses/pytz/LICENSE.txt

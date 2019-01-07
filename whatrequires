@@ -10,6 +10,7 @@ horizon
 icalendar
 matplotlib
 pandas
+pyecobee
 pyrfc3339
 python-zeep
 tzlocal
