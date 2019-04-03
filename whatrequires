@@ -6,6 +6,8 @@ acme
 astral
 certbot
 cryptography
+deprecated-Babel
+deprecated-cryptography
 horizon
 icalendar
 matplotlib
@@ -13,4 +15,5 @@ pandas
 pyecobee
 pyrfc3339
 python-zeep
+serpent
 tzlocal
