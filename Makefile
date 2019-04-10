@@ -1,5 +1,5 @@
 PKG_NAME := pytz
-URL = https://files.pythonhosted.org/packages/af/be/6c59e30e208a5f28da85751b93ec7b97e4612268bb054d0dff396e758a90/pytz-2018.9.tar.gz
+URL = https://files.pythonhosted.org/packages/df/d5/3e3ff673e8f3096921b3f1b79ce04b832e0100b4741573154b72b756a681/pytz-2019.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
