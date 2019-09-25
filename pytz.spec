@@ -6,7 +6,7 @@
 #
 Name     : pytz
 Version  : 2019.2
-Release  : 65
+Release  : 66
 URL      : https://files.pythonhosted.org/packages/27/c0/fbd352ca76050952a03db776d241959d5a2ee1abddfeb9e2a53fdb489be4/pytz-2019.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/27/c0/fbd352ca76050952a03db776d241959d5a2ee1abddfeb9e2a53fdb489be4/pytz-2019.2.tar.gz
 Source1 : https://files.pythonhosted.org/packages/27/c0/fbd352ca76050952a03db776d241959d5a2ee1abddfeb9e2a53fdb489be4/pytz-2019.2.tar.gz.asc
@@ -17,10 +17,8 @@ Requires: pytz-license = %{version}-%{release}
 Requires: pytz-python = %{version}-%{release}
 Requires: pytz-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : python-dev
 
 %description
-pytz - World Timezone Definitions for Python
 ============================================
 
 %package license
@@ -57,7 +55,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564685605
+export SOURCE_DATE_EPOCH=1569443097
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "

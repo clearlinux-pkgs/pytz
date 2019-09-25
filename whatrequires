@@ -11,14 +11,16 @@ conda
 cryptography
 deprecated-Babel
 deprecated-cryptography
-fs
 horizon
 hypothesis
 icalendar
+influxdb
 ironic
+keystone
 koji
 matplotlib
 oslo.serialization
+oslo.utils
 pandas
 pyecobee
 pypowervm
