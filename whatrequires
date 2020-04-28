@@ -8,10 +8,10 @@ astral
 ceph
 certbot
 cinder
+ciso8601
 conda
 cryptography
-heat
-horizon
+flask-restx
 hypothesis
 icalendar
 influxdb
@@ -22,10 +22,10 @@ matplotlib
 oslo.serialization
 oslo.utils
 pandas
+pyRFC3339
 pycadf
 pyecobee
 pypowervm
-pyrfc3339
 pysaml2
 python-zeep
 serpent
