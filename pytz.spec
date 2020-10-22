@@ -6,20 +6,28 @@
 #
 Name     : pytz
 Version  : 2020.1
-Release  : 74
+Release  : 75
 URL      : https://files.pythonhosted.org/packages/f4/f6/94fee50f4d54f58637d4b9987a1b862aeb6cd969e73623e02c5c00755577/pytz-2020.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f4/f6/94fee50f4d54f58637d4b9987a1b862aeb6cd969e73623e02c5c00755577/pytz-2020.1.tar.gz
 Source1  : https://files.pythonhosted.org/packages/f4/f6/94fee50f4d54f58637d4b9987a1b862aeb6cd969e73623e02c5c00755577/pytz-2020.1.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
+Requires: pytz-license = %{version}-%{release}
 Requires: pytz-python = %{version}-%{release}
 Requires: pytz-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-pytz - World Timezone Definitions for Python
 ============================================
+
+%package license
+Summary: license components for the pytz package.
+Group: Default
+
+%description license
+license components for the pytz package.
+
 
 %package python
 Summary: python components for the pytz package.
@@ -49,12 +57,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588085755
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603402613
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
@@ -67,6 +74,8 @@ py.test-2.7 || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pytz
+cp %{_builddir}/pytz-2020.1/LICENSE.txt %{buildroot}/usr/share/package-licenses/pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -74,6 +83,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
 
 %files python
 %defattr(-,root,root,-)
