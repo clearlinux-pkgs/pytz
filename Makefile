@@ -1,5 +1,5 @@
 PKG_NAME := pytz
-URL = https://files.pythonhosted.org/packages/70/44/404ec10dca553032900a65bcded8b8280cf7c64cc3b723324e2181bf93c9/pytz-2020.5.tar.gz
+URL = https://files.pythonhosted.org/packages/b0/61/eddc6eb2c682ea6fd97a7e1018a6294be80dba08fa28e7a3570148b4612d/pytz-2021.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
