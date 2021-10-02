@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pytz
-Version  : 2021.1
-Release  : 86
-URL      : https://files.pythonhosted.org/packages/b0/61/eddc6eb2c682ea6fd97a7e1018a6294be80dba08fa28e7a3570148b4612d/pytz-2021.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/b0/61/eddc6eb2c682ea6fd97a7e1018a6294be80dba08fa28e7a3570148b4612d/pytz-2021.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/b0/61/eddc6eb2c682ea6fd97a7e1018a6294be80dba08fa28e7a3570148b4612d/pytz-2021.1.tar.gz.asc
+Version  : 2021.3
+Release  : 87
+URL      : https://files.pythonhosted.org/packages/e3/8e/1cde9d002f48a940b9d9d38820aaf444b229450c0854bdf15305ce4a3d1a/pytz-2021.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e3/8e/1cde9d002f48a940b9d9d38820aaf444b229450c0854bdf15305ce4a3d1a/pytz-2021.3.tar.gz
+Source1  : https://files.pythonhosted.org/packages/e3/8e/1cde9d002f48a940b9d9d38820aaf444b229450c0854bdf15305ce4a3d1a/pytz-2021.3.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -17,6 +17,7 @@ Requires: pytz-license = %{version}-%{release}
 Requires: pytz-python = %{version}-%{release}
 Requires: pytz-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
+BuildRequires : pytest
 
 %description
 ============================================
@@ -49,15 +50,15 @@ python3 components for the pytz package.
 
 
 %prep
-%setup -q -n pytz-2021.1
-cd %{_builddir}/pytz-2021.1
+%setup -q -n pytz-2021.3
+cd %{_builddir}/pytz-2021.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1612200099
+export SOURCE_DATE_EPOCH=1633195864
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -70,12 +71,12 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-py.test-2.7 || :
+pytest || :
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pytz
-cp %{_builddir}/pytz-2021.1/LICENSE.txt %{buildroot}/usr/share/package-licenses/pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
+cp %{_builddir}/pytz-2021.3/LICENSE.txt %{buildroot}/usr/share/package-licenses/pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :

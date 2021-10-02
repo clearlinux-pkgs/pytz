@@ -2,14 +2,13 @@
 Babel
 Django
 acme
-astral
+ansible
 cantarell-fonts
 certbot
 ciso8601
 conda
 cryptography
 google-api-core
-home-assistant
 hypothesis
 icalendar
 influxdb
@@ -20,7 +19,6 @@ pyRFC3339
 pyecobee
 python-zeep
 pytorch
-serpent
 tempora
 testrepository
 tzlocal
